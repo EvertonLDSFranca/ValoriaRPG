@@ -1,0 +1,377 @@
+#Arrays de Raça e Classe
+gRaca = ["Alado","Anão","Drow","Elfo","Faedin","Górgon","Humano","Lycan","Orc","Runemico","Sireno","Succubo"]
+
+gClasse = ["Guerreiro", "Ladino", "Monge", "Patrulheiro","Bardo","Bruxo","Feiticeiro","Mago","Necromante","Oráculo","Paladino","Sacerdote"]
+
+#Gerador dos Atributos
+tot = 0
+
+while tot != 60 do
+A = 12
+B = rand(4..12)
+C = rand(4..12)
+D = rand(4..12)
+E = rand(4..12)
+F = rand(4..12)
+G = rand(4..12)
+help = A+B+C+D+E+F+G
+H = 60-help
+if H >=4 and H <=12
+  tot = A+B+C+D+E+F+G+H
+end
+end
+
+#Gerador de Raça e Classe
+
+Raca = gRaca.sample(1).join
+Classe = gClasse.sample(1).join
+
+#Organização dos atributos pela Classe
+
+VIT = 0
+FOR = 0
+DES = 0
+AGI = 0
+SAB = 0
+INS = 0
+VON = 0
+CAR = 0
+
+if Classe == "Guerreiro"
+
+  FOR = A;
+  VIT = B;
+  DES = C;
+  AGI = D;
+  SAB = E;
+  INS = F;
+  VON = G;
+  CAR = H;
+
+elsif Classe == "Monge"
+
+  FOR = A;
+  VIT = B;
+  DES = C;
+  AGI = D;
+  SAB = E;
+  INS = F;
+  VON = G;
+  CAR = H;
+
+elsif Classe == "Paladino"
+
+  FOR = A;
+  VIT = B;
+  DES = C;
+  AGI = D;
+  SAB = E;
+  INS = F;
+  VON = G;
+  CAR = H;
+
+elsif Classe == "Ladino"
+  DES = A;
+  FOR = B;
+  VIT = C;
+  AGI = D;
+  SAB = E;
+  INS = F;
+  VON = G;
+  CAR = H;
+
+elsif Classe == "Patrulheiro"
+  DES = A;
+  FOR = B;
+  VIT = C;
+  AGI = D;
+  SAB = E;
+  INS = F;
+  VON = G;
+  CAR = H;
+
+elsif Classe == "Bruxo"
+  VON = A;
+  FOR = B;
+  VIT = C;
+  DES = D;
+  AGI = E;
+  SAB = F;
+  INS = G;
+  CAR = H;
+
+elsif Classe == "Necromante"
+  SAB = A;
+  FOR = B;
+  VIT = C;
+  DES = D;
+  AGI = E;
+  VON = F;
+  INS = G;
+  CAR = H;
+
+elsif Classe == "Sacerdote"
+  SAB = A;
+  FOR = B;
+  VIT = C;
+  DES = D;
+  AGI = E;
+  VON = F;
+  INS = G;
+  CAR = H;
+
+elsif Classe == "Oráculo"
+  VON = A;
+  FOR = B;
+  VIT = C;
+  DES = D;
+  AGI = E;
+  SAB = F;
+  INS = G;
+  CAR = H;
+
+elsif Classe == "Mago"
+   SAB = A;
+   FOR = B;
+   VIT = C;
+   DES = D;
+   AGI = E;
+   INS = F;
+   VON = G;
+   CAR = H;
+
+elsif Classe == "Bardo"
+  VON = A;
+  INS = B;
+  FOR = C;
+  VIT = D;
+  DES = E;
+  AGI = F;
+  SAB = G;
+  CAR = H;
+
+elsif Classe == "Feiticeiro"
+  VON = A;
+  INS = B;
+  FOR = C;
+  VIT = D;
+  DES = E;
+  AGI = F;
+  SAB = G;
+  CAR = H;
+
+end
+
+#Bonus de atributos pela raça
+bonus1 = 0
+bonus2 = 0
+while bonus1 == bonus2 do
+bonus1 = rand(1..3)
+bonus2 = rand(1..3)
+end
+
+bonus3 = 0
+bonus4 = 0
+while bonus3 == bonus4 do
+bonus3 = rand(1..8)
+bonus4 = rand(1..8)
+end
+
+if Raca == "Alado"
+  if bonus1 == 1 or bonus2 == 1
+     AGI = AGI+2
+  end
+  if bonus1 == 2 or bonus2 == 2
+     DES = DES+2
+  end
+  if bonus1 == 3 or bonus2 == 3
+     INS = INS+2
+  end
+
+elsif Raca == "Anão"
+  if bonus1 == 1 or bonus2 == 1
+    VIT = VIT+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    FOR = FOR+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    VON = VON+2
+ end
+
+elsif Raca == "Drow"
+  if bonus1 == 1 or bonus2 == 1
+    AGI = AGI+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    CAR = CAR+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    INS = INS+2
+ end
+
+elsif Raca == "Elfo"
+  if bonus1 == 1 or bonus2 == 1
+    AGI = AGI+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    DES = DES+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    CAR = CAR+2
+ end
+
+elsif Raca == "Faedin"
+  if bonus1 == 1 or bonus2 == 1
+    AGI = AGI+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    VON = VON+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    CAR = CAR+2
+ end
+
+elsif Raca == "Górgon"
+  if bonus1 == 1 or bonus2 == 1
+    SAB = SAB+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    CAR = CAR+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    INS = INS+2
+ end
+
+elsif Raca == "Humano"
+  if bonus3 == 1 or bonus4 == 1
+    VIT = VIT+2
+  end
+  if bonus3 == 2 or bonus4 == 2
+    FOR = FOR+2
+  end
+  if bonus3 == 3 or bonus4 == 3
+    AGI = AGI+2
+  end
+  if bonus3 == 4 or bonus4 == 4
+    DES = DES+2
+  end
+  if bonus3 == 5 or bonus4 == 5
+    SAB = SAB+2
+  end
+  if bonus3 == 6 or bonus4 == 6
+    INS = INS+2
+  end
+  if bonus3 == 7 or bonus4 == 7
+    VON = VON+2
+  end
+  if bonus3 == 8 or bonus4 == 8
+    CAR = CAR+2
+  end
+
+elsif Raca == "Lycan"
+  if bonus1 == 1 or bonus2 == 1
+    FOR = FOR+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    AGI = AGI+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    INS = INS+2
+ end
+
+elsif Raca == "Orc"
+  if bonus1 == 1 or bonus2 == 1
+    FOR = FOR+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    VIT = VIT+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    INS = INS+2
+ end
+
+elsif Raca == "Runemico"
+  if bonus1 == 1 or bonus2 == 1
+    SAB = SAB+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    VIT = VIT+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    INS = INS+2
+ end
+
+elsif Raca == "Sireno"
+  if bonus1 == 1 or bonus2 == 1
+    SAB = SAB+2
+ end
+ if bonus1 == 2 or bonus2 == 2
+    VIT = VIT+2
+ end
+ if bonus1 == 3 or bonus2 == 3
+    CAR = CAR+2
+ end
+
+elsif Raca == "Succubo"
+  if bonus3 == 1 or bonus4 == 1
+    VIT = VIT+2
+  end
+  if bonus3 == 2 or bonus4 == 2
+    FOR = FOR+2
+  end
+  if bonus3 == 3 or bonus4 == 3
+    AGI = AGI+2
+  end
+  if bonus3 == 4 or bonus4 == 4
+    DES = DES+2
+  end
+  if bonus3 == 5 or bonus4 == 5
+    SAB = SAB+2
+  end
+  if bonus3 == 6 or bonus4 == 6
+    INS = INS+2
+  end
+  if bonus3 == 7 or bonus4 == 7
+    VON = VON+2
+  end
+  if bonus3 == 8 or bonus4 == 8
+    CAR = CAR+2
+  end
+
+end
+
+#Calculo de atributos secundários
+
+Nivel = 1
+Vida = (VIT*3)+(Nivel*2)
+Energia = (VIT/2.floor)+(INS/2.floor)+(VON/2.floor)+Nivel*1
+
+if FOR>=VIT
+Bloqueio = FOR/2.floor
+else
+Bloqueio = VIT/2.floor
+end
+
+if AGI>=INS
+Esquiva = AGI/2.floor
+else
+Esquiva = INS/2.floor
+end
+
+Mental = (Vida/10.floor)+(Energia/10.floor)+(VON/2.floor)
+
+Iniciativa = (AGI/2.floor)+(VON/2.floor)
+Deslocamento = AGI/2.floor
+Carga = FOR*2
+
+#Final
+
+puts "Raça: #{Raca}  |  Classe: #{Classe}  |  Nivel: #{Nivel}"
+puts "Pontos de Vida: #{Vida}  |  Pontos de Energia: #{Energia}"
+puts "Bloqueio: #{Bloqueio}  |  Esquiva: #{Esquiva}  |  Mental: #{Mental}"
+puts "Iniciativa: #{Iniciativa}  |  Deslocamento: #{Deslocamento}  |  Carga: #{Carga}kg"
+puts "VIT: #{VIT}     CAR: #{CAR}"
+puts "FOR: #{FOR}     SAB: #{SAB}"
+puts "DES: #{DES}     VON: #{VON}"
+puts "AGI: #{AGI}     INS: #{INS}"
